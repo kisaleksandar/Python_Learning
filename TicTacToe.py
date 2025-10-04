@@ -5,4 +5,14 @@
 # I will start my code with function for table screening
 
 def display_board(board):
-    pass
+
+
+    print(board[6] + " | " + board[7] + " | " + board[8] )
+    print('----------')
+    print(board[3] + " | " + board[4] + " | " + board[5] )
+    print('----------')
+    print(board[0] + " | " + board[1] + " | " + board[2] )
+
+    return board
+
+display_board(['X', ' ', ' ','O', ' ', 'X',' ', ' ', ' '])
