@@ -76,4 +76,7 @@ def space_check(board, position):
     return board[position - 1] == ' '
 
 
+def full_board_check(board):
+    return all(b != ' ' for b in board)
+
 
