@@ -1,6 +1,6 @@
 # Description of the project:Idea is to create TicTacToe game. Create "numpad" logic as on keyboard. Two players should play, first player will choose
 # will be 'X' or 'O', when first player decide on screen "First player will start the game" should pop up, then message "Are you ready:", user can write Y or N
-# If Y, user will be asked to write on which position wants to X(or O) also table for tic-tac shoul be shown..
+# If Y, user will be asked to write on which position wants to X(or O) also table for tic-tac should be shown
 
 # I will start my code with function for table screening
 
@@ -19,7 +19,7 @@ def display_board(board):
 
 
 
-#Function that can take a player input and assign their marker as 'X' or 'O'. Use while loop for continius asking
+#Function that can take a player input and assign their marker as 'X' or 'O'. Use while loop for continues asking
 def player_input():
     print("Welcome to Tic Tac Toe!")
 
@@ -95,3 +95,19 @@ def player_choice(board):
 
 
     return int(next_position)
+
+#Function that asks the player if they want to play again and returns a boolean True if they do want to play again.
+def replay():
+    rep = 'Wrong'
+    while rep.upper() not in ['Y', "N"]:
+        rep = input('Do you want to play again? (Y/N): ')
+        if rep.upper() == 'Y':
+            return True
+        elif rep.upper() == 'N':
+            return False
+        else:
+            print('Sorry, please choose from Y to N')
+
+
+
+
