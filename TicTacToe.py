@@ -79,4 +79,16 @@ def space_check(board, position):
 def full_board_check(board):
     return all(b != ' ' for b in board)
 
+def player_choice(board):
+
+    next_position = 'Wrong'
+
+    while next_position not in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
+        next_position = input('Please enter your next position(1 - 9): ')
+        if next_position not in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
+            print('Sorry, please choose from 1 to 9')
+        if not space_check(board, int(next_position)):
+            print('Sorry, this position is not available anymore')
+        else:
+            return int(next_position)
 
