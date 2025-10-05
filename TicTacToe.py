@@ -15,7 +15,6 @@ def display_board(board):
 
     return board
 
-display_board(['X', ' ', ' ','O', ' ', 'X',' ', ' ', ' '])
 
 
 #Function that can take a player input and assign their marker as 'X' or 'O'. Use while loop for continius asking
@@ -36,21 +35,34 @@ def player_input():
         else:
             pass
 
-    print("Player 1 will start fist!")
+    print("Player 1 will start first!")
 
     return player1.upper(), player2
 
-
-
-
-
-
-
+#Function which takes in the board list object, a marker ('X' or 'O') and desired position (number 1 - 9) and assigns it to the board
 def place_marker(board, marker, position):
-    pass
+    board[position - 1] = marker
+    display_board(board)
 
-def win_check(test_board, mark):
-    pass
+
+
+place_marker(['', ' ', ' ','', ' ', '',' ', ' ', ' '], 'X', 6)
+
+
+def win_check(board, mark):
+    list_of_win_positions = [(0,1,2), (3,4,5), (6,7,8), (0,3,6), (1,4,7), (2,5,8), (0,4,8), (2,4,6)]
+
+    for a,b,c in list_of_win_positions:
+        if board[a] == mark and board[b] == mark and board[c] == mark:
+            return True
+        else:
+            pass
+
+    return False
+
+
+
+
 
 def choose_first():
     pass
