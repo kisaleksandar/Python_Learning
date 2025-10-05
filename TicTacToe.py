@@ -16,3 +16,46 @@ def display_board(board):
     return board
 
 display_board(['X', ' ', ' ','O', ' ', 'X',' ', ' ', ' '])
+
+
+#Function that can take a player input and assign their marker as 'X' or 'O'. Use while loop for continius asking
+def player_input():
+    print("Welcome to Tic Tac Toe!")
+
+    player1 = 'Wrong'
+    player2 = ' '
+
+    while player1 != 'X' and player1 != 'O':
+        player1 = input("Player 1 : Do you want to play X or O? ")
+        if player1.upper() != 'X' and player1.upper() != 'O':
+            print("Sorry, please choose X or O")
+        elif player1.upper() == 'X':
+            player2 = 'O'
+        elif player1.upper() == 'O':
+            player2 = 'X'
+        else:
+            pass
+
+    print("Player 1 will start fist!")
+
+    return player1.upper(), player2
+
+
+
+
+
+
+
+def place_marker(board, marker, position):
+    pass
+
+def win_check(test_board, mark):
+    pass
+
+def choose_first():
+    pass
+
+def space_check(board, position):
+    pass
+
+
