@@ -26,7 +26,7 @@ def player_input():
     player1 = 'Wrong'
     player2 = ' '
 
-    while player1 != 'X' and player1 != 'O':
+    while player1.upper() != 'X' and player1.upper() != 'O':
         player1 = input("Player 1 : Do you want to play X or O? ")
         if player1.upper() != 'X' and player1.upper() != 'O':
             print("Sorry, please choose X or O")
@@ -37,18 +37,12 @@ def player_input():
         else:
             pass
 
-    print("Player 1 will start first!")
-
     return player1.upper(), player2
 
 #Function which takes in the board list object, a marker ('X' or 'O') and desired position (number 1 - 9) and assigns it to the board
 def place_marker(board, marker, position):
     board[position - 1] = marker
     display_board(board)
-
-
-
-place_marker(['', ' ', ' ','', ' ', '',' ', ' ', ' '], 'X', 6)
 
 
 def win_check(board, mark):
@@ -66,8 +60,8 @@ def win_check(board, mark):
 # You may want to lookup random.randint() Return a string of which player went first.
 def choose_first():
     first_play=randint(0,1)
-    print(f"First will play player {first_play + 1}")
-    return str(first_play)
+    print(f"Player {first_play + 1} will go first")
+    return int(first_play)
 
 
 
@@ -81,6 +75,7 @@ def full_board_check(board):
 
 def player_choice(board):
 
+    #display_board(board)
     next_position = ' '
     flag = False
 
@@ -107,6 +102,57 @@ def replay():
             return False
         else:
             print('Sorry, please choose from Y to N')
+
+
+
+
+
+while True:
+    board = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ]
+    player_1, player_2 = player_input()
+    first = choose_first()
+
+
+    x = input("Are you ready to play? (Y/N): ")
+    if x.upper() == 'Y':
+        pass
+    elif x.upper() == 'N':
+        continue
+
+    display_board(board)
+
+
+
+    win = False
+    while not win:
+        if first == 0:
+            next__position = player_choice(board)
+            place_marker(board, player_1, next__position)
+            win = win_check(board, player_1)
+            if win:
+                print("Player 1 wins!")
+            first = 1
+
+        elif first == 1:
+            next__position = player_choice(board)
+            place_marker(board, player_2, next__position)
+            win = win_check(board, player_2)
+            if win:
+                print("\nPlayer 2 wins!")
+            first = 0
+
+        if full_board_check(board) and not win:
+            print("\n Remi, play again!")
+            break
+        else:
+            pass
+
+
+        print("")
+    if not replay():
+        break
+
+
 
 
 
