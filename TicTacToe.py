@@ -73,7 +73,7 @@ def choose_first():
 
 
 def space_check(board, position):
+    return board[position - 1] == ' '
 
-    pass
 
 
