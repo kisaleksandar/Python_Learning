@@ -4,6 +4,8 @@
 
 # I will start my code with function for table screening
 
+from random import randint
+
 def display_board(board):
 
 
@@ -60,14 +62,18 @@ def win_check(board, mark):
 
     return False
 
-
-
-
-
+#function that uses the random module to randomly decide which player goes first.
+# You may want to lookup random.randint() Return a string of which player went first.
 def choose_first():
-    pass
+    first_play=randint(0,1)
+    print(f"First will play player {first_play + 1}")
+    return str(first_play)
+
+
+
 
 def space_check(board, position):
+
     pass
 
 
